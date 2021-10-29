@@ -1,39 +1,39 @@
 import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
+import icon from '../../assets/fractaleditor_transparent.png';
+import vsg from '../../assets/vsg_transparent.png';
+import cinematic from '../../assets/fractalcinematic.mp4';
+
+import Dialog from 'components/dialog';
+
 import './App.css';
 
-const Hello = () => {
+const Fractal = () => {
   return (
     <div>
-      <div className="Hello">
+      <video autoPlay muted loop className="bgVideo">
+        <source src={cinematic} type="video/mp4" />
+      </video>
+
+      <Dialog type="error" id={0x01} />
+
+      <div className="main">
         <img width="200px" alt="icon" src={icon} />
       </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
+      <h1>Welcome to Fractal Editor</h1>
+
+      <hr />
+
+      <div className="main">
           <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
+            Create New Level
           </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
           <button type="button">
-            <span role="img" aria-label="books">
-              🙏
-            </span>
-            Donate
+            Open Existing Level
           </button>
-        </a>
+      </div>
+      <div className="credits">
+        <h2>Brought to you by</h2>
+        <img width="100px" alt="vsg" src={vsg} />
       </div>
     </div>
   );
@@ -43,7 +43,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Hello} />
+        <Route path="/" component={Fractal} />
       </Switch>
     </Router>
   );

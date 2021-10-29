@@ -14,6 +14,16 @@ export default {
   module: {
     rules: [
       {
+        test: /\.(mov|mp4)$/, use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
+          }
+        ]
+      },
+      {
         test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: {
