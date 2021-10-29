@@ -1,5 +1,5 @@
 import 'renderer/App.css';
-import { titleCase } from 'helpers/stringops';
+import { titleCase } from 'helpers/stringOps';
 import { checkFatal } from 'helpers/errorHandling';
 import { errorMessage } from 'helpers/errorHandling';
 import { warningMessage } from 'helpers/errorHandling';
